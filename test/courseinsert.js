@@ -62,9 +62,9 @@ beforeEach(function(done){
 
     cour.save().then(function(){
       
-       CourseModel.findOne({Name:'Javascript'}).then(function(result){
+       CourseModel.findOne({Name:'Java'}).then(function(result){
 
-        assert(result.Books.Title === 'Age of words' && result.Books.Author.Name === 'Frank Carl')
+        assert(result.Books[0].Author[0].Name  === 'Frank Carl' && result.Books[0].Author[1].Name  === 'Mario Cedra' )
           done();
       });
 
